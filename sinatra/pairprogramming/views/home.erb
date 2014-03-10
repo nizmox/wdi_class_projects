@@ -1,0 +1,10 @@
+<h1><%= @current_question.text %></h1>
+
+<div class="responses">
+  <% @current_question.responses.each do |response,question| %>
+    <a href="/<%= question %>" class="<%= response %>"><%= response %></a>
+  <% end %>
+</div>
+
+<!-- A blatant ripoff of http://pairprogrammingbot.com/ -->
+

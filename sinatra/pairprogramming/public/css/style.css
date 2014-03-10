@@ -1,0 +1,46 @@
+#container {
+  padding: 60px 0 0 0 ;
+}
+
+h1 {
+  color: white;
+  font-size: 46px;
+  text-align: center;
+  font-family: arial;
+}
+
+body {
+  background-color: black;
+}
+
+.responses {
+  width: 464px;
+  margin: 65px auto;
+}
+
+a {
+  padding: 10px;
+  margin: 0 30px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+
+  display: inline-block;
+  width: 150px;
+  font-family: arial;
+  font-size: 30px;
+}
+
+a.Yes {
+  background-color: green;
+}
+
+a.No {
+  background-color: red;
+}
+
+a.Done, a.Continue {
+  background-color: blue;
+  display: block;
+  margin: 0 auto;
+}

@@ -1,0 +1,19 @@
+* {
+  font-family: arial;
+}
+
+#container {
+  margin: auto;
+  max-width: 960px;
+}
+
+input, textarea, select {
+  display: block;
+  width: 100%;
+}
+
+.send {
+  float: right;
+}
+
+

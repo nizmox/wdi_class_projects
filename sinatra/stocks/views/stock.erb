@@ -1,0 +1,20 @@
+<h2>Enter the stock code for your search</h2>
+
+<form action="/" method="get">
+  <input name="code" type="text" placeholder="Stock Code">
+  <input type="submit" value="Find Stock!">
+</form><br>
+
+<!-- check that data variable exists and a price is present-->
+<% if @data.present? && @data.lastTrade > 0 %>
+  <div>
+    <p>
+      <b>Stock Name:</b> <%= @data.name %><br>
+      <b>Current Price:</b> $<%= @data.lastTrade %>
+    </p>
+  </div>
+<% else %>
+  <div>
+    <p>Invalid Stock Code</p>
+  </div>
+<% end %>

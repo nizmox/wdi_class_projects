@@ -1,0 +1,30 @@
+.invisible {
+  display: none;
+}
+
+div {
+  border: 1px solid pink;
+}
+
+.static {
+  position: static;
+}
+
+.relative {
+  position: relative;
+}
+
+.fixed {
+  background-color: orange;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+}
+
+.absolute {
+  background-color: green;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}

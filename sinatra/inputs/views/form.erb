@@ -1,0 +1,73 @@
+<h1>HTML5 Form Inputs Demo</h1>
+
+<form action="/" method="post">
+  <!-- link the label to the input (for => id). This allows clicking on label to select the box -->
+  <label for="user_name">Name:</label> 
+  <!-- name sets the key for displaying this data in the params hash -->
+  <!-- placeholder = what the user sees in the input before typing -->
+  <input id="user_name" name="user_name" placeholder="Please enter your name">
+
+  <label for="about_me">About Me:</label>
+  <textarea id="about_me" name="about_me" placeholder="Short biographical story"></textarea>
+
+  <label for="food">Favourite Food</label>
+  <select id="food" name="food_options">
+    <!-- value will be = the value shown in the params hash -->
+    <!-- if a value is not provided, it will just = the text inside option -->
+    <option value="indian">Butter Chicken</option>
+    <!-- selected sets the default selection -->
+    <option value="italian" selected>Pizza</option>
+    <option value="mexican">Burrito</option>
+    <!-- 'disabled' prevents the user from making this selection, it is greyed out -->
+    <option value="greek" disabled>Greek Salad</option>
+  </select>
+
+  <label for="number_demo">Number:</label>
+  <!-- type = number forces numerical input, will not work on older IE -->
+  <!-- NOTE: will still accept blank input unless you also use 'required' -->
+  <!-- step sets what increment of number is allowed -->
+  <input type="number" id="number_demo" name="number_demo" step="any" placeholder="enter a number" required><br>
+
+  <label for="url_demo">Your Homepage:</label>
+  <!-- type = url forces the user to input a url-->
+  <input type="url" id="url_demo" name="url_demo" placeholder="url"><br>
+
+  <label for="email_demo">Email:</label>
+  <!-- type = email forces the user to input an email-->
+  <input type="email" id="email_demo" name="email_demo" placeholder="your email" required><br>
+
+  <label for="file_demo">File demo:</label>
+  <!-- asks the user to select a local file, does not work without further code -->
+  <input type="file" id="file_demo" name="file_demo"><br>
+
+  <label for="color_demo">Color demo:</label>
+  <!-- asks the user to select a color with the color wheel, ONLY SUPPORTED IN CHROME -->
+  <!-- returned as a hexadecimal value -->
+  <input type="color" id="color_demo" name="color_demo"><br>
+
+  <label for="date_demo">Date demo:</label>
+  <!-- select a date, is local specific based on your region -->
+  <input type="date" id="date_demo" name="date_demo"><br>
+
+  <label for="password">Password demo:</label>
+  <!-- password input which is obscured from view by the user -->
+  <input type="password" id="password" name="password"><br>
+
+  <label for="range_demo">Range demo:</label>
+  <!-- slider with number from MIN to MAX -->
+  <input type="range" id="range_demo" name="range_demo" min="0" max="100">
+
+  <label for="check_demo">Checkbox:</label>
+  <!-- checkbox. NOTE: If not checked, NO value is sent in the params hash -->
+  <input type="checkbox" id="checkbox_demo" name="checkbox_demo">
+
+  <!-- label does NOT have a for as it's not linked to a particular radio button-->
+  <label>Multichoice:</label>
+  <!-- these are linked together via name (the key), and as usual value is the value in params -->
+  <input type="radio" name="group1" value="1">small<label>
+  <input type="radio" name="group1" value="2">medium<label>
+  <input type="radio" name="group1" value="3">large<label>
+
+  <!-- If you have a single <button> inside your form instead of using <input>, it will be assumed to be the submit button automatically -->
+  <input type="submit" value="send" class="send">
+</form>
