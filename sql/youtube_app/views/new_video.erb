@@ -1,0 +1,28 @@
+<form action="/videos/create" method="post">
+  <p>
+    <label for="title">Title:</label>
+    <input id="title" type="text" name="title" required>
+  </p>
+  <p>
+    <label for="description">Description:</label>
+    <input id="description" type="text" name="description" required>
+  </p>
+  <p>
+    <label for="url">URL:</label>
+    <input id="description" type="url" name="url" required>
+  </p>
+  <p>
+    <label for="genre">Genre:</label>
+    <input id="genre" type="text" name="genre" required>
+  </p>
+
+  <button>Create Video</button>
+</form>
+
+<!-- CREATE TABLE videos (
+  id INTEGER PRIMARY KEY,
+  title TEXT,
+  description TEXT,
+  url TEXT,
+  genre TEXT
+); -->

@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Favourite Youtube Videos</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/normalize.css">
 </head>
 <body>
-  <%= yield %>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/videos">Favourite Videos</a>
+    <a href="/videos/new">New Video</a>
+  </nav>
+  <div id="container">
+    <%= yield %>
+  </div>
 </body>
 </html>

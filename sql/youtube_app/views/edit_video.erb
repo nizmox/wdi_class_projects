@@ -1,0 +1,28 @@
+<form action="/videos/<%= @video["id"] %>/update" method="post">
+  <p>
+    <label for="title">Title:</label>
+    <input id="title" type="text" name="title" required value="<%= @video["title"] %>">
+  </p>
+  <p>
+    <label for="description">Description:</label>
+    <input id="description" type="text" name="description" required value="<%= @video["description"] %>">
+  </p>
+  <p>
+    <label for="url">URL:</label>
+    <input id="description" type="url" name="url" required value="<%= @video["url"] %>">
+  </p>
+  <p>
+    <label for="genre">Genre:</label>
+    <input id="genre" type="text" name="genre" required value="<%= @video["genre"] %>">
+  </p>
+
+  <button>Update Video</button>
+</form>
+
+<!-- CREATE TABLE videos (
+  id INTEGER PRIMARY KEY,
+  title TEXT,
+  description TEXT,
+  url TEXT,
+  genre TEXT
+); -->
