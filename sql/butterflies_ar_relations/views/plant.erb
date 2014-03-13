@@ -1,0 +1,25 @@
+<h1>Here is the awesome plant</h1>
+
+<ul>
+  <li>Name: <%= @plant.name %></li>
+  <li>Latin Name: <%= @plant.name %></li>
+  <li>Region: <%= @plant.name %></li>
+  <li><img src="<%= @plant.photo %>" alt="plant"></li>
+</ul>
+
+<h2>Here are its butterflies</h2>
+<ul>
+  <% @butterflies.each do |butterfly| %>
+    <li><a href="/butterflies/<%= butterfly.id %>"><%= butterfly.name %></a></li>
+  <% end %>
+</ul>
+
+
+
+<!-- CREATE TABLE plants (
+  id SERIAL8 PRIMARY KEY,
+  name TEXT,
+  latin_name TEXT,
+  region TEXT,
+  photo TEXT
+); -->

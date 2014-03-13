@@ -12,3 +12,21 @@ nav a {
   padding-right: 10px;
   color: white;
 }
+
+label {
+  display: inline-block;
+  width: 90px;
+}
+
+input {
+  font-size: 12px;
+  width: 380px;
+}
+
+input#genre {
+  width: 100px;
+}
+
+input[type="text"], input[type="url"] {
+  font-size: 12px;
+}

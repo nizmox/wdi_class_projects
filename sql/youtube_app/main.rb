@@ -35,8 +35,6 @@ post '/videos/create' do
 
   query_db(sql)
 
-  binding.pry
-
   #find the ID of the newly created movie
   id = query_db('SELECT MAX(ID) FROM videos;').first['MAX(ID)']
 

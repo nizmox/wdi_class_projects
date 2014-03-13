@@ -1,0 +1,7 @@
+<h2>Course: <%= @course['name'] %></h2>
+<h3>Students in this Course...</h3>
+<ul>
+  <% @students.each do |student| %>
+  <li><a href="/students/<%= student['id'] %>"><%= student['first_name'] %></a></li>
+  <% end %>
+</ul>

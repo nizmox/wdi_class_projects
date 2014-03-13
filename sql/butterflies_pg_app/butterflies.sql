@@ -1,5 +1,5 @@
 CREATE TABLE butterflies (
-  id INTEGER PRIMARY KEY,
+  id SERIAL8 PRIMARY KEY,
   name TEXT,
   family TEXT,
   photo TEXT

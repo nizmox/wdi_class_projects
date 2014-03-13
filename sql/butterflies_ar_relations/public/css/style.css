@@ -1,0 +1,67 @@
+body {
+  background-image: url(http://qwallpapers.net/wp-content/uploads/2014/02/butterfly-wallpapers-2---mjvair-vigqtodg.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /*color: #6F7980;*/
+}
+
+#container {
+  max-width: 960px;
+  margin: 20px auto;
+  background-color: rgba(255,255,255,0.7);
+}
+
+nav {
+  background-color: black;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  color: rgb(64,171,23);
+  text-shadow: 0px 0px 3px rgb(64,171,23);
+}
+
+nav p.seperator {
+  color: white;
+  display: inline;
+}
+
+h1 {
+  text-align: center;
+}
+
+#content {
+  padding: 20px;
+}
+
+/* NEW AND EDIT FORM */
+
+label {
+  min-width: 52px;
+  display: inline-block;
+  text-align: right;
+}
+
+/* BUTTERFLY VIEW (SINGLE BUTTERFLY) */
+
+.butterfly-pic {
+  width: 500px;
+}
+
+/* OTHER STUFF */
+
+form.create_plant label {
+  min-width: 100px;
+}
+
+img {
+  max-width: 300px;
+}
