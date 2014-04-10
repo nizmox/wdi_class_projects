@@ -1,0 +1,19 @@
+<%= form_for @ingredient do |f| %>
+  <div class="form-inputs">
+    <%= f.label :name %>
+    <%= f.text_field :name , :required => true %>
+  </div>
+  <div class="form-inputs">
+    <%= f.label :measurement %>
+    <%= f.text_field :measurement %>
+  </div>
+  <div class="form-inputs">
+    <%= f.label :cost %>
+    <%= f.number_field :cost %>
+  </div>
+  <div class="form-inputs">
+    <%= f.label :image %>
+    <%= f.url_field :image %>
+  </div>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,10 @@
+<h1>Home#text</h1>
+<p>I have <%= pluralize(@animal1, 'animal') %></p>
+<p>I have <%= pluralize(@animal2, 'animal') %></p>
+<p><%= truncate(@shortstory, :length => 15) %></p>
+
+<% @numbers.each do |number| %>
+  <li>
+    <p style="background-color: <%= cycle('green','red','orange') %>"><%= number %></p>
+  </li>
+<% end %>

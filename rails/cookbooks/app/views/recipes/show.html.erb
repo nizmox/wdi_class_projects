@@ -1,0 +1,7 @@
+<h2><%= @recipe.name %></h2>
+<p>Course: <%= @recipe.course %></p>
+<p>Cooktime: <%= @recipe.cooktime %></p>
+<p>Serving Size: <%= @recipe.servingsize %></p>
+<p>Instructions: <%= @recipe.instructions %></p>
+<p><%= image_tag(@recipe.image, :class => 'recipe') %></p>
+<p><%= link_to 'Edit', edit_recipe_path %> - <%= link_to 'Delete', recipe_path,{:method => 'delete'} %></p>

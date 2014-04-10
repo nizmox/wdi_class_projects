@@ -1,0 +1,25 @@
+<%= form_for @book do |f| %>
+  <div class="form-inputs">
+    <%= f.label :title %>
+    <%= f.text_field :title , :required => true %>
+  </div>
+  <div class="form-inputs">
+    <%= f.label :cuisine %>
+    <%= f.text_field :cuisine %>
+  </div>
+  <div class="form-inputs">
+    <%= f.label :chef %>
+    <%= f.text_field :chef %>
+  </div>
+  <div class="form-inputs">
+    <%= f.label :image %>
+    <%= f.url_field :image %>
+  </div>
+
+  <% Recipe.order(:name).each do |recipe| %>
+    <span><%= recipe.name %></span>
+    <%= check_box_tag 'book[recipe_ids][]', recipe.id, recipe.in?(@book.recipes) %> <!-- put an empty array at the end to allow multiple options -->
+  <% end %><br>
+
+  <%= f.submit %>
+<% end %>

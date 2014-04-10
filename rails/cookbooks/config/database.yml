@@ -1,0 +1,8 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: cookbooks
+  pool: 5
+  username: Nizmox
+  password:
+

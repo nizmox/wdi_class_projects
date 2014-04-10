@@ -1,0 +1,81 @@
+/* 
+  https://kuler.adobe.com/Rise-color-theme-3648332/edit/?copy=true&base=2&rule=Custom&selected=0&name=Copy%20of%20Rise&mode=rgb&rgbvalues=0.16862745098039217,0.22745098039215686,0.25882352941176473,0.24705882352941178,0.3411764705882353,0.396078431372549,0.7411764705882353,0.8313725490196079,0.8705882352941177,0.9372549019607843,0.9372549019607843,0.9372549019607843,0.9058823529411765,0.2980392156862745,0.23529411764705882&swatchOrder=0,1,2,3,4
+*/
+
+body {
+  background-color: #E74C3C;
+  color: white;
+}
+
+#container > h1 {
+  text-align: center;
+  font-family: 'Aclonica', sans-serif;
+  font-size: 40px;
+}
+
+#container {
+  max-width: 960px;
+  margin: auto;
+}
+
+form > input {
+  font-size: 150%;
+  width: 95%;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  margin-bottom: 0.5em;
+  margin: auto;
+  display: block;
+  color: #2B3A42;
+}
+
+/* Task Headings */
+#tasks > h2, #completed > h2 {
+  font-family: 'Aclonica', sans-serif;
+  text-decoration: underline;
+}
+
+/* Tasks - Not Complete */
+
+.task {
+  background-color: #EFEFEF;
+  border: 1px solid #3F5765;
+  border-radius: 1em;
+  padding: 1em;
+  margin-bottom: 1em;
+  color: #3F5765;
+}
+
+.task h2 {
+  margin-top: 0;
+}
+
+.task button {
+  border-radius: 1em;
+  padding: 5px 10px;
+  /*overidden on completed tasks*/
+  background-color: #3F5765;
+  color: #EFEFEF;
+}
+
+/* Tasks - Completed */
+
+#completed {
+  margin-top: 2em;
+}
+
+#completed .task {
+  background-color: #3F5765;
+  border: 1px solid white;
+  transition: 0.2s linear all;
+  color: white;
+}
+
+#completed .task:hover {
+  background-color: #2B3A42;
+}
+
+#completed .task button {
+  background-color: white;
+  color: #3F5765;
+}

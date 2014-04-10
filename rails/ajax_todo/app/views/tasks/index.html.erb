@@ -1,0 +1,29 @@
+<div id="container">
+  <h1>JS Todo App</h1>
+
+  <form class="task_creator">
+    <input name="new_task" id="new_task" placeholder="Enter your task and press ENTER to create">
+  </form>
+
+  <h2>Tasks Todo</h2>
+  <section id="tasks">
+  </section>
+
+  <h2>Completed Tasks</h2>
+  <section id="completed">
+  </section>
+
+</div>
+
+<script type="text/underscore-template" id="task_template">
+      <div class="task" data-taskID="{{= id }}">
+        <h2>{{= description }}</h2>
+        <p><strong>Created at:</strong> {{= created_at }}</p>
+        {{ if (complete) { }}
+          <p><strong>Completed at:</strong>
+          {{= updated_at }}
+        {{ } }}</p>
+        <button class="task-status">{{= complete ? 'Incomplete' : 'Complete' }}</button>
+        <button class="task-delete">Delete</button>
+      </div>
+  </script>

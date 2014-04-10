@@ -1,0 +1,49 @@
+html, body {
+  background-image: url('http://maxcdn.thedesigninspiration.com/wp-content/uploads/2012/11/Wallpaper-l-010.jpg');
+  background-attachment: fixed;
+  background-position-y: 1000px;
+  /*background-position-y: -10px;*/ 
+}
+
+body {
+  color: white;
+  min-height: 10000em;
+}
+
+nav {
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  background-color: pink;
+  position: fixed;
+  left: 0px;
+  top: 40%;
+  padding: 1em;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#container {
+  background-color: rgba(68, 68, 68, 0.5);
+  max-width: 960px;
+  margin: auto;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.bubble {
+  /*width: 1em;*/
+  /*height: 1em;*/
+  border-radius: 100%;
+  /*background-color: green;*/
+  border: 2px solid white;
+  position: absolute;
+  opacity: 0.5;
+}

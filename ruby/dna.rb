@@ -3,30 +3,24 @@ require 'pry'
 class DNA
 
   def initialize(dna)
-    @dna = dna
+    @dna = dna.upcase 
+    @valid_inputs = ['G','A','T','C','U']
   end
 
   def count(input)
-    valid_inputs = ['G','A','T','C']
-    unless valid_inputs.include? input
+    #error check
+    unless @valid_inputs.include? input
       raise "That's not a nucleotide, silly!"
-      # break
     end
 
-    counter = 0
-    segments = @dna.split ""
-    segments.each do |s|
-      counter += 1 if s == input
-    end
-    counter
-  end
+    @dna.count input
+  end #end of count method
 
   def nucleotide_counts
     hash = {}
-    segments = @dna.split ""
-    segments.each do |s|
-      hash.has_key?(s) ? hash[s] += 1 : hash[s] = 1
-    end #end of segments loop
+    @valid_inputs.each do |i|
+      hash[i] = @dna.count i
+    end
     hash
   end #end of nucleotide_counts method
 

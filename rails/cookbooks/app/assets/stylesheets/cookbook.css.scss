@@ -1,0 +1,26 @@
+nav {
+  background-color: pink;  
+  padding: 1em;
+
+  ul {
+    list-style: none;
+
+    li {
+      display: inline;
+      margin: 1em;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }//a
+
+      a:hover {
+        text-shadow: 0 0 5px red;
+      } //a:hover
+    }//li
+  }//ul
+}//nav
+
+img.book, img.ingredient, img.recipe {
+  width: 300px;
+}

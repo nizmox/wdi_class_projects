@@ -1,0 +1,5 @@
+<h1>Home#number</h1>
+
+<p>You owe me <%= number_to_currency(@number, :unif => '$') %></p>
+<p>You owe me <%= number_to_human(@big_number) %></p>
+<p>You owe me <%= number_to_phone(@phone_number, country_code: 61, area_code: true) %></p>

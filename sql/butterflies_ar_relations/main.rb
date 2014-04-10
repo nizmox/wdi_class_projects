@@ -9,6 +9,9 @@ require 'pg'
 require 'active_record'
 require 'protected_attributes'
 
+require_relative './models/butterfly.rb'
+require_relative './models/plant.rb'
+
 ActiveRecord::Base.establish_connection(
   :adapter => "postgresql",
   :host => "localhost",
@@ -20,20 +23,11 @@ ActiveRecord::Base.establish_connection(
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
-after { ActiveRecord::Base.connection.close }
-
-#object to interact with the database (butterflies)
-class Butterfly < ActiveRecord::Base
-  belongs_to :plant
-end
-
-class Plant < ActiveRecord::Base
-  has_many :butterflies
-end
-
 before do
   @families = Butterfly.select(:family).distinct
 end
+
+after { ActiveRecord::Base.connection.close }
 
 get '/' do
   erb :home
@@ -114,6 +108,7 @@ get '/butterflies/:id/edit' do
 end
 
 # ----------- Plant Routes Start Here -----------
+
 get '/plants' do
   @plants = Plant.all
 

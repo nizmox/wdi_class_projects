@@ -1,0 +1,33 @@
+<%= form_for @recipe do |f| %>
+  <div class="form-inputs">
+    <%= f.label :name %>
+    <%= f.text_field :name , :required => true %>
+  </div>
+  <div class="form-inputs">
+    <%= f.label :course %>
+    <%= f.text_field :course %>
+  </div>
+  <div class="form-inputs">
+    <%= f.label :cooktime %>
+    <%= f.number_field :cooktime %>
+  </div>
+  <div class="form-inputs">
+    <%= f.label :servingsize %>
+    <%= f.number_field :servingsize %>
+  </div>
+  <div class="form-inputs">
+    <%= f.label :instructions %>
+    <%= f.text_area :instructions %>
+  </div>
+  <div class="form-inputs">
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
+
+  <% Ingredient.order(:name).each do |ingredient| %>
+    <span><%= ingredient.name %></span>
+    <%= check_box_tag 'recipe[ingredient_ids][]', ingredient.id, ingredient.in?(@recipe.ingredients) %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>

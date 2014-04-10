@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ViewHelpersApp</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  
+  <nav>
+    <a href="/home">HOME</a>
+    <a href="/number">NUMBER</a>
+    <a href="/text">TEXT</a>
+    <a href="/assets">ASSETS</a>
+    <a href="/url">URL</a>
+  </nav>
+
+  <%= yield %>
+
+</body>
+</html>
