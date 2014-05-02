@@ -58,7 +58,7 @@ group :development do
 end
 
 #prevent mass assignment to attributes not explicitly allowed
-gem 'protected_attributes'
+# gem 'protected_attributes'
 
 #to annotate our models
 gem 'annotate'
@@ -72,6 +72,9 @@ gem 'dotenv-rails'
 #testing gems
 gem 'factory_girl_rails'
 gem 'faker'
+
+#twitter gem
+gem 'twitter'
 
 #AWS IMAGE UPLOAD
 

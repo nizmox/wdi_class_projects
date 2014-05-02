@@ -18,4 +18,47 @@ namespace :twitter do
   desc "Search Twitter for a query and number of results"
   task :search, [:query, :limit] => :environment do |t, args|
 
+    #set query variables
+    query = args[:query]
+    limit = args[:limit].to_i
+
+    puts "Searching for #{query}, limiting to #{limit} results. Please wait..."
+
+    #setup authentication for API call
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV['CONSUMER_KEY']
+      config.consumer_secret     = ENV['CONSUMER_SECRET']
+      config.access_token        = ENV['ACCESS_TOKEN']
+      config.access_token_secret = ENV['ACCESS_SECRET']
+    end
+
+    #perform query
+    tweets = client.search(query, :result_type => "recent").take(limit)
+
+    #
+    tweets.collect do |tweet|
+      find_user = User.where('twitter_id = ?', tweet.user.id)
+
+      if find_user.length == 0
+        user = User.create(:twitter_id => tweet.user.id, :name => tweet.user.screen_name)
+        puts "User Created: #{tweet.user.screen_name}"
+      else
+        puts "WARNING: User with twitter id #{tweet.user.id} already exists in database"
+        user = find_user.first
+      end
+
+      find_tweet = Tweet.where('twitter_id = ?', tweet.id)
+
+      if find_tweet.length == 0
+        user.tweets.create(:twitter_id => tweet.id, :post => tweet.text)
+        puts "Tweet Created: #{tweet.text}"
+      else
+        puts "WARNING: Tweet with twitter id #{tweet.id} already exists in database"
+      end
+      
+    end
+
+    puts "TWEETS FETCHED: #{tweets.count}"
+
+  end
 end

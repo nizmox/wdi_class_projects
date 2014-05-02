@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20140502021727) do
 
   create_table "tweets", force: true do |t|
+    t.integer  "twitter_id"
     t.integer  "user_id"
     t.text     "post"
     t.datetime "created_at"
@@ -21,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140502021727) do
   end
 
   create_table "users", force: true do |t|
+    t.integer  "twitter_id"
     t.string   "name"
     t.string   "email"
     t.datetime "created_at"
