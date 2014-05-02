@@ -1,0 +1,76 @@
+# directory "tmp"
+
+# file "tmp/hello.tmp" => "tmp" do
+#   sh "touch tmp/hello.tmp"
+#   sh "date >> tmp/hello.tmp"
+# end
+
+#----------------
+#run a rake task
+#rake task_name
+
+#set an environment variable
+#export VAR=x
+
+#delete an environment variable
+#unset VAR
+
+namespace :morning do
+
+  #required so "rake -T" includes this task
+  desc "Turns off the alarm"
+  task :turn_off_alarm do
+    puts "Turned off alarm. Please get up."
+  end
+
+  desc "Make myself a pretty lady"
+  task :groom_myself do
+    puts "Brushed teeth."
+    puts "Showered."
+    puts "Shaved."
+    puts "Comb over the bald spot."
+  end
+
+  desc "Prepare coffee for consumption"
+  task :make_coffee do
+    # cups = 2
+    cups = ENV['CUPS'] || 2
+    puts "Made #{cups} cups of coffee. Headache gone."
+  end
+
+  desc "Drink the fucking coffee"
+  task :drink_coffee do
+    puts "Drank coffee."
+  end
+
+  desc "Prepare the coffee and drink it ffs!"
+  task :caffeinate => [:make_coffee, :drink_coffee] do
+    puts "Thank god for coffee!"
+  end
+
+  desc "Walk the doggie"
+  task :walk_dog do
+    puts "Dog is now worked"
+  end
+
+  desc "Get ready for the day"
+  task :ready_for_the_day => [:turn_off_alarm, :groom_myself, :caffeinate, :walk_dog] do
+    puts "Ready for the day!"
+  end
+
+end
+
+#----------------
+
+namespace :evening do
+
+  desc "EXPERIMENTAL: drink coffee at night"
+  task :make_coffee do
+    puts "Do you really want to stay up all night"
+    Rake::Task['morning:make_coffee'].invoke
+    puts "I hope that was decaf."
+  end
+
+end
+
+task :default => 'morning:ready_for_the_day'

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Handlebars Demo 1</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.2/handlebars.min.js"></script>
+</head>
+<body>
+
+  <script id="post-template" type="text/x-handlebars-template">
+    {{#each posts}}
+      <div>
+        <h1>{{ this.title }}</h1>
+        <h4>{{ this.date }}</h4>
+        <p>{{ this.body }}</p>
+      </div>
+    {{/each}}
+  </script>
+  
+  <script>
+
+    var data = {
+      posts: [{
+        title: "My first Handlebars Template",
+        date: "Yesterday",
+        body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed ducimus quis facilis. Ullam, aperiam, dignissimos, magni, saepe iure sequi sint corporis in eos dolor minus repellat deleniti earum nulla rerum!"
+      }, {
+        title: "My first Handlebars Template",
+        date: "Today",
+        body: "Some other text..."
+      }, {
+        title: "Same Template, Different Data",
+        date: "Tomorrow",
+        body: "Even more text..."
+      }]
+    }
+
+    var post = $('#post-template').html();
+    var template = Handlebars.compile(post);
+
+    $('body').append( template(data) );
+
+  </script>
+
+</body>
+</html>

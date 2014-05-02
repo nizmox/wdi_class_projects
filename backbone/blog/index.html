@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Backbone Blog</title>
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/underscore-min.js"></script>
+  <script src="js/backbone-min.js"></script>
+  <script src="js/blog.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+  <a href="#">Home</a>
+
+  <div id="main">
+  </div>
+
+  <script id="appView" type="text/x-underscore-template">
+    <h1>Recent Posts</h1>
+    <ul id="posts"></ul>
+  </script>
+
+  <script id="postListView" type="text/x-underscore-template">
+    <a href="#posts/<%= slug %>"><%= title %></a>
+  </script>
+
+
+  <script id="postView" type="text/x-underscore-template">
+    <div class="post">
+      <h1 class="title"><%= title %></h1>
+      <div class="content">
+        <%= content %>
+      </div>
+    </div>
+  </script>
+  
+</body>
+</html>
